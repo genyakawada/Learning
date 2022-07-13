@@ -5,7 +5,13 @@ VScodeでEmmet(自動補完機能)を利用してHTMLを楽に書く方法
 https://qiita.com/mikd/items/183023f99db8954a0443
 
 
+■サンプルソース
+https://github.com/kiyodori/todo
+
 ■Gitコマンド
+
+git pull origin master
+
  git add sharememo.txt
 
  git commit -m "参考メモの追加"
