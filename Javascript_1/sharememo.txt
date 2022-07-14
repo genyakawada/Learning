@@ -12,8 +12,8 @@ https://github.com/kiyodori/todo
 
 git pull origin master
 
- git add sharememo.txt
+ git add .
 
- git commit -m "参考メモの追加"
+ git commit -m "右クリックでToDo削除、左クリックで打ち消し戦"
 
  git push origin master
