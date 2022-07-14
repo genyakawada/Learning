@@ -8,12 +8,15 @@ https://qiita.com/mikd/items/183023f99db8954a0443
 ■サンプルソース
 https://github.com/kiyodori/todo
 
+◆山浦さんのYoutube
+https://www.youtube.com/watch?v=E08jeQBa1D0
+
 ■Gitコマンド
 
 git pull origin master
 
  git add .
 
- git commit -m "右クリックでToDo削除、左クリックで打ち消し戦"
+ git commit -m "打ち消し線情報の保存"
 
  git push origin master
