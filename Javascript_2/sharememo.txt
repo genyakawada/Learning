@@ -1,0 +1,16 @@
+﻿
+◆セイト先生Youtube
+【JavaScript超入門講座】わずか50分で知識ゼロから基礎をマスター！
+https://www.youtube.com/watch?v=QCjFPSO96RU
+
+
+
+■Gitコマンド
+
+git pull origin master
+
+ git add .
+
+ git commit -m "打ち消し線情報の保存"
+
+ git push origin master
