@@ -71,3 +71,24 @@ https://qiita.com/C_HERO/items/b0971da170c8142b69e9
 【例】
 > git log --oneline master origin/master
 
+====================================================================================
+manifest.json の Manifest: Line: 1, column: 1, Syntax error. エラーの解決方法
+====================================================================================
+■エラーの発生状況
+manifest.json が Manifest: Line: 1, column: 1, Syntax error. というエラーを発生。
+
+■エラーの原因
+ベーシック認証がかかっていると発生。
+
+■エラーの解決方法
+MDNのウェブアプリマニフェストページに以下の記載がありました。
+
+注: マニフェストのアクセスに資格情報が必要な場合は、マニフェストファイルが現在のページと同じオリジンにあったとしても、 crossorigin 属性を use-credentials に設定する必要があります。
+
+どうやらベーシック認証のせいで manifest.json へアクセスできないようです。
+
+html の manifest.json を読み込んでいる <link> 要素に crossorigin="use-credentials" を追加する。
+
+html
+<link rel="manifest" href="/manifest.json" crossorigin="use-credentials">
+これでエラーが表示されなくなりました！
