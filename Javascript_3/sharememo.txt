@@ -1,0 +1,94 @@
+
+======================================================
+◆セイト先生Youtube
+【JavaScript超入門講座】基礎文法だけでクイズゲームのアプリを開発！
+======================================================
+Youtube Link
+https://www.youtube.com/watch?v=fAluwAmHrws
+
+BoilerPlate HTML
+https://html5boilerplate.com
+
+
+
+
+==============================
+■Gitコマンド
+==============================
+git pull origin master
+
+ git add .
+
+ git commit -m "打ち消し線情報の保存"
+
+ git push origin master
+
+
+============================================================
+【Git】ローカルブランチとリモートブランチの差分を表示させるコマンド集
+https://qiita.com/C_HERO/items/b0971da170c8142b69e9
+============================================================
+1. リモートリポジトリの変更履歴の取得
+
+> git fetch origin リモートブランチ名
+【例】
+> git fetch origin master
+
+(1) git diff
+
+
+2. ローカルブランチとリモートブランチの差分を表示させる
+差分のあるファイル（とその内容）を表示させる
+①オーソドックスなコマンド
+
+> git diff ローカルブランチ名 origin/リモートブランチ名
+【例】
+> git diff master origin/master
+②サマリを表示
+
+> git diff --stat ローカルブランチ名 origin/リモートブランチ名
+【例】
+> git diff --stat master origin/master
+③差分のあるファイル名を表示
+
+> git diff --name-status ローカルブランチ名 origin/リモートブランチ名
+【例】
+> git diff --name-status master origin/master
+
+
+(2) git log
+
+コミットハッシュ値の現在地（ローカルブランチとリモートブランチそれぞれ）を表示させる
+①オーソドックスなコマンド
+
+> git log ローカルブランチ名 origin/リモートブランチ名
+【例】
+> git log master origin/master
+②1コミット1行で表示
+
+
+> git log --oneline ローカルブランチ名 origin/リモートブランチ名
+【例】
+> git log --oneline master origin/master
+
+====================================================================================
+manifest.json の Manifest: Line: 1, column: 1, Syntax error. エラーの解決方法
+====================================================================================
+■エラーの発生状況
+manifest.json が Manifest: Line: 1, column: 1, Syntax error. というエラーを発生。
+
+■エラーの原因
+ベーシック認証がかかっていると発生。
+
+■エラーの解決方法
+MDNのウェブアプリマニフェストページに以下の記載がありました。
+
+注: マニフェストのアクセスに資格情報が必要な場合は、マニフェストファイルが現在のページと同じオリジンにあったとしても、 crossorigin 属性を use-credentials に設定する必要があります。
+
+どうやらベーシック認証のせいで manifest.json へアクセスできないようです。
+
+html の manifest.json を読み込んでいる <link> 要素に crossorigin="use-credentials" を追加する。
+
+html
+<link rel="manifest" href="/manifest.json" crossorigin="use-credentials">
+これでエラーが表示されなくなりました！
