@@ -1,6 +1,6 @@
 const quiz =[
     {
-        question : 'ゲーム市場、最も売れたゲーム機は次のうちどれ',
+        question : 'ゲーム市場、最も売れたゲーム機は次のうちどれ1(DS)',
         answers:[
             'スーファミ',
             'プレステ2',
@@ -10,7 +10,7 @@ const quiz =[
         correct : 'DS'
     },
     {
-        question : 'ゲーム市場、最も売れたゲーム機は次のうちどれ',
+        question : 'ゲーム市場、最も売れたゲーム機は次のうちどれ2(スイッチ)',
         answers:[
             'スーファミ',
             'プレステ2',
@@ -20,7 +20,7 @@ const quiz =[
         correct: 'スイッチ'
     },
     {
-        question : 'ゲーム市場、最も売れたゲーム機は次のうちどれ',
+        question : 'ゲーム市場、最も売れたゲーム機は次のうちどれ3(PS2)',
         answers:[
             'スーファミ',
             'プレステ2',
@@ -74,12 +74,13 @@ $button[1].textContent = answers[1];
 $button[2].textContent = answers[2];
 $button[3].textContent = answers[3];
 */
-
+let cntCorrect = 0;
 
 //正誤判定の関数
 const clickHandler =(e) => {
-    if(correct===e.target.textContent){
+    if(quiz[quizIndex].correct===e.target.textContent){
         window.alert('正解');
+        cntCorrect++;
     }else{
         window.alert('不正解');
     }
@@ -90,7 +91,10 @@ const clickHandler =(e) => {
         setupQuiz();
     }else{
         //問題数がなければ、こちらを実行
-
+        window.alert('正解数は'+cntCorrect+'です');
+        quizIndex= 0;
+        cntCorrect=0;
+        setupQuiz();
     }
 }
 //正誤判定（リファクタリング後）
